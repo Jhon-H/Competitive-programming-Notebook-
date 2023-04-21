@@ -5,6 +5,7 @@ vi p;
 vector<vector<ii>> adj;
 void dijkstra(int root) { //O((n + m) log m)
   int n = SZ(adj);
+  p.assign(n, -1);
   dist.assign(n, INF);
   priority_queue<pll, vector<pll>, greater<pll>> q;
   //priority_queue<EDGE, vector<EDGE>, decltype(&comp)> q(comp);
