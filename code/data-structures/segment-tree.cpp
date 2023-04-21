@@ -1,11 +1,10 @@
-#include <bits/stdc++.h>
-using namespace std;
+#include "template.h";
 
 const int N = 1e5;  // limit for array size
 int n;  // array size
 int t[2 * N];
 
-int op(int a, int b) {return a + b};
+int op(int a, int b) { return a + b; };
 
 void build() {  // build the tree
   for (int i = n - 1; i > 0; --i) t[i] = op(t[i<<1], t[i<<1|1]);

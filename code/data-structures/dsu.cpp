@@ -1,5 +1,4 @@
-#include <bits/stdc++.h>
-using namespace std;
+#include "template.h";
 
 // Trick
 // - Cada nodo guarda -1 como flag inicial

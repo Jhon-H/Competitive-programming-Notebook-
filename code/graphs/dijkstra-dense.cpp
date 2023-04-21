@@ -1,11 +1,9 @@
-#include <bits/stdc++.h>
-using namespace std;
-// O(n^2 + m)
+#include "template.h";
+
 // Use for dense graph --> m = n^2
-const int INF = 1e9;
 vector<int> dist, p;
 vector<vector<pair<int, int>>> adj;
-void dijkstra(int root) {
+void dijkstra(int root) { // O(n^2 + m)
   int n = 0; // adj
   dist.assign(n, INF);
   p.assign(n, -1);

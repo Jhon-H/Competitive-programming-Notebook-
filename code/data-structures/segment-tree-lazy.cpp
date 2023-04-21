@@ -1,10 +1,12 @@
+#include "template.h";
+
 // Segment tree with lazy propagation
 struct segtree{
   segtree *left;
   segtree *right;
   int l, r;
   ll value, lazy;
-  ll nullValue = -inf; // -inf for max, inf for min, etc
+  ll nullValue = -INF; // -inf for max, inf for min, etc
 
   segtree(vl &v, int l, int r) : l(l), r(r) {
     int m = (l+r)>>1;

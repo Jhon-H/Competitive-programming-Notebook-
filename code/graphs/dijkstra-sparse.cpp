@@ -1,27 +1,24 @@
-#include <bits/stdc++.h>
-using namespace std;
-typedef pair<int, int> ii;
+#include "template.h";
 
-//O((n + m) log m)
-const int INF = 1e9;
-vector<int> dist, p;
-vector<vector<pair<int, int>>> adj;
-void dijkstra(int root) {
-  int n = adj.size();
+vector<ll> dist;
+vi p;
+vector<vector<ii>> adj;
+void dijkstra(int root) { //O((n + m) log m)
+  int n = SZ(adj);
   dist.assign(n, INF);
-  p.assign(n, -1);
-  priority_queue<pair<int, int>, vector<ii>, greater<ii>> q;
+  priority_queue<pll, vector<pll>, greater<pll>> q;
+  //priority_queue<EDGE, vector<EDGE>, decltype(&comp)> q(comp);
 
   dist[root] = 0;
   q.push({ 0, root });
 
+  ll dv; int v;
   while(!q.empty()) {
-    int dv = q.top().first, v = q.top().second; q.pop();
-      if(dv != dist[v]) continue;
+    tie(dv, v) = q.top(); q.pop();
+    if(dv != dist[v]) continue;
     for(auto u: adj[v]) {
-      int to = u.first;
-      int w = u.second;
-      if(dist[to] >= dist[v] + w) {
+      int to = u.first, w = u.second;
+      if(dist[to] > dist[v] + w) {
         dist[to] = dist[v] + w;
         p[to] = v;
         q.push({ dist[to], to });
@@ -32,10 +29,8 @@ void dijkstra(int root) {
 
 vector<int> find_path(int from, int to, vector<int> &p) {
   vector<int> path;
-  for(int v=to; v!=from; v=p[v]) {
-    path.push_back(v);
-  }
-  path.push_back(from);
+  for(int v=to; v!=from; v=p[v]) path.pb(v);
+  path.pb(from);
   reverse(ALL(path));
   return path;
 }
