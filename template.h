@@ -9,15 +9,17 @@ using namespace std;
 #define pb push_back
 #define endl '\n'
 #define ALL(v) v.begin(), v.end()
-#define SZ(arr) ((int) arr.size())
+#define sz(arr) ((int) arr.size())
 
 typedef long long ll;
 typedef pair<int,int> ii;
 typedef pair<ll,ll> pll;
+typedef pair<int,ll> pil;
 typedef vector<int> vi;
 typedef vector<ll> vl;
 
-const int INF = 1e9/2-1; // ll 1e18/2-1;
+const int INF = 1e9; // INF + INF = overflow --> 1e9/2-1;
+const ll INFL = 1e18; // INF + INF = overflow --> 1e18/2-1;
 const ll PI = acos(-1);
 const int MOD = 1e9+7;
 const ll EPS= 1e-9;

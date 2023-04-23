@@ -1,0 +1,51 @@
+# Any line followed by a '#' character is ignored
+# Section headings must be in square brackets
+# Subsections within a section should follow the format:
+# [filename within code directory][tab character \t][subsection title]
+
+[Templates]
+templates/template.cpp	C++ template
+templates/template.py	Python template
+
+[Graph algorithms]
+graphs/bellman-ford.cpp	Bellman Ford
+graphs/dijkstra-dense.cpp	Dijkstra (Dense)
+graphs/dijkstra-sparse.cpp	Dijkstra (Sparse)
+graphs/floyd-warshall.cpp	Floyd Warshall
+graphs/topo-sort-kahns.cpp	Topo Sort
+
+
+[Data Structures]
+data-structures/dsu.cpp	Disjoint Set Union
+data-structures/segment-tree.cpp	Segment Tree
+data-structures/segment-tree-lazy.cpp	Segment Tree Lazy
+
+[Strings]
+strings/kmp.cpp	KMP
+strings/z_algorithm.cpp	Z algorithm
+
+[Math]
+maths/binpow.cpp	Binary Exponentiation
+maths/combinatorias.cpp	Combinatoria
+maths/count-primes.cpp	Count primes
+maths/factorial_mod_p.cpp	Factorial mod p
+maths/integer-factorization.cpp	Integer Factorization
+maths/linear-sieve.cpp	Linear Sieve of Eratosthenes
+maths/modular_division.cpp	Modular division
+maths/primality-test.cpp	Primality tests
+maths/segmented-sieve.cpp	Segmented Sieve
+maths/sieve.cpp	Sieve of Eratosthenes
+
+[Dynamic Programming]
+dynamic-programming/binomial-coefficient.cpp	Binomial coefficient
+dynamic-programming/lis-nlogn.cpp	LIS (nlogn)
+dynamic-programming/lis.cpp	LIS
+dynamic-programming/max_submatrix_2d.cpp	Max submatrix 2d
+
+[Miscellaneous]
+miscellaneous/bits.cpp	C++ bitwise
+miscellaneous/subsets.cpp	Subsets
+miscellaneous/tricks.cpp	C++ tricks
+miscellaneous/tricks.py	Python tricks
+
+[Fin]
