@@ -20,9 +20,9 @@ typedef vector<ll> vl;
 
 const int INF = 1e9; // INF + INF = overflow --> 1e9/2-1;
 const ll INFL = 1e18; // INF + INF = overflow --> 1e18/2-1;
-const ll PI = acos(-1);
+const double PI = acos(-1);
 const int MOD = 1e9+7;
-const ll EPS= 1e-9;
+const double EPS= 1e-9;
 const string ABC = "abcdefghijklmnopqrstuvwxyz";
 
 int dirx[8] = { -1, 0, 0, 1, -1, -1, 1, 1 };

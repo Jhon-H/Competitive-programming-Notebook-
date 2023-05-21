@@ -1,20 +1,36 @@
 #include "template.h";
 
 // O(n * log n)
-int lis(vector<int> const& a) {
-  int n = a.size();
-  const int INF = 1e9;
-  vector<int> d(n+1, INF);
-  d[0] = -INF;
+vi get_lis(vi &a, vi &p, int end) {
+  vi lis;
+  for(int u=end; u != -1; u=p[u]) lis.pb(a[u-1]);
+  reverse(ALL(lis));
+  return lis;
+}
 
-  for (int i = 0; i < n; i++) {
-    int j = upper_bound(d.begin(), d.end(), a[i]) - d.begin();
-    if (d[j-1] < a[i] && a[i] < d[j]) d[j] = a[i];
+int lis(vi &a) {
+  int n = sz(a);
+  vi d(n+1, INF), ind(n+1, 0), p(n+1, -1);
+
+  d[0] = -INF;
+  ind[0] = -1;
+  
+  for(int i=0; i<n; ++i) {
+    int l = upper_bound(ALL(d), a[i]) - d.begin();
+    if(d[l-1] < a[i] && a[i] < d[l]) {
+      d[l] = a[i];
+      ind[l] = i+1;
+      p[i+1] = ind[l-1];
+    }
   }
 
-  int ans = 0;
-  for (int i = 0; i <= n; i++) {
+  int ans;
+  for(int i=0; i<=n; ++i) {
     if (d[i] < INF) ans = i;
   }
+
+  //vi lis_path = get_lis(a, p, ind[ans]);
+  //for(int i: lis_path) cout << i << " "; cout << endl;
+
   return ans;
 }
