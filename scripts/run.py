@@ -3,7 +3,7 @@ import sys
 
 def compile_and_execute(name):
   compile_command = f'g++ .\\{name}.cpp -o a'
-  execute_command = f'type .\\{name}.in | .\\a.exe'
+  execute_command = f'type .\\{name}.in | .\\a.exe > .\\{name}.out'
 
   subprocess.run(compile_command, shell=True, check=True)
   subprocess.run(execute_command, shell=True, check=True)

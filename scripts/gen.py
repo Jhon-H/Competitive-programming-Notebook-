@@ -12,7 +12,7 @@ def create_files(name, base_file):
 
   # Crear archivo de entrada
   in_filename = f'{name}.in'
-  with open(in_filename, 'w'):s
+  with open(in_filename, 'w'):
     pass
 
   # Crear archivo de salida
