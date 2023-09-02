@@ -18,6 +18,7 @@ graphs/topo-sort-kahns.cpp	Topo Sort
 [Data Structures]
 data-structures/dsu.cpp	Disjoint Set Union
 data-structures/segment-tree.cpp	Segment Tree
+data-structures/segment-tree-2.cpp	Segment Tree 2
 data-structures/segment-tree-lazy.cpp	Segment Tree Lazy
 
 [Strings]
@@ -35,6 +36,8 @@ maths/modular_division.cpp	Modular division
 maths/primality-test.cpp	Primality tests
 maths/segmented-sieve.cpp	Segmented Sieve
 maths/sieve.cpp	Sieve of Eratosthenes
+maths/matrix_expo.cpp	Exp Matrices
+maths/extended_euclidean.cpp	Algoritmo de euclides
 
 [Dynamic Programming]
 dynamic-programming/binomial-coefficient.cpp	Binomial coefficient
