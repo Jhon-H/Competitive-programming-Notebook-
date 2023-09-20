@@ -64,3 +64,12 @@ int hopcroft_karp() {
                 matching++;
     return matching;
 }
+
+
+// while( pairs-- ){
+// 		int x , y ;
+// 		scanf("%d %d",&x,&y);
+// 		G[x].push_back(y+n);
+// 		G[y+n].push_back(x);
+// 	}
+// 	printf("%d\n",hopcroft_karp());
