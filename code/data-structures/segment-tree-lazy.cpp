@@ -1,50 +1,65 @@
 #include "template.h";
 
-// Segment tree with lazy propagation
-struct segtree{
-  segtree *left;
-  segtree *right;
-  int l, r;
-  ll value, lazy;
-  ll nullValue = -INF; // -inf for max, inf for min, etc
+// struct SegTreeLazy {
+//   const int MAXN = 1e5;
+//   vi t, lazy;
 
-  segtree(vl &v, int l, int r) : l(l), r(r) {
-    int m = (l+r)>>1;
-    lazy = 0ll;
-    if (l!=r) {
-      left = new segtree(v, l, m);
-      right = new segtree(v, m+1, r);
-    } else value = v[l];
-  }
+//   SegTreeLazy() {
+//     t = vi(MAXN*4, 0);
+//     lazy= vi(MAXN*4, 0);
+//   }
 
-  ll operation(ll leftValue, ll rightValue) { return leftValue+rightValue; } // change operation!!!!
+//   void push(int v) {
+//     if(lazy[v]) {
+//       t[v<<1] += lazy[v];
+//       lazy[v<<1] += lazy[v];
+//       t[(v<<1)|1] += lazy[v];
+//       lazy[(v<<1)|1] += lazy[v];
+//       lazy[v] = 0;
+//     }
+//   }
 
-  void propagate() {
-    if (lazy) {
-      value += lazy*(r-l+1); // += or = ???
-      if (l!=r) left->lazy+=lazy, right->lazy+=lazy;
-      lazy = 0;
-    }
-  }
+//   int op(int a, int b) { return a+b; }
 
-  ll get(int a, int b) {
-    propagate();
-    if (l>b || r<a) return nullValue;
-    if (l>=a && b>=r) return value;
-    return operation(left->get(a,b), right->get(a,b));
-  }
+//   void build(vi &arr, int v, int tl, int tr) {
+//     if(tl == tr) {
+//       t[v] = arr[tl];
+//     } else {
+//       int tm = (tl+tr)>>1;
 
-  void update(int a, int b, ll nv) { // nv -> new value
-    propagate();
-    if (l>b || r<a) return;
-    if (l>=a && b>=r) {
-      // value = nv;
-      lazy += nv;
-      propagate();
-      return;
-    }
-    left->update(a,b,nv);
-    right->update(a,b,nv);
-    value = operation(left->value, right->value);
-  }
-};
+//       build(arr, v<<1, tl, tm);
+//       build(arr, (v<<1)|1, tm+1, tr);
+
+//       t[v] = op(t[v<<1], t[(v<<1)|1]);
+//     }
+//   }
+
+//   void update(int v, int tl, int tr, int l, int r, int value) {
+//     if (l > r) return;
+//     if (l == tl && tr == r) {
+//       t[v] += value;
+//       lazy[v] += value;
+//     } else {
+//       push(v);
+//       int tm = (tl + tr)>>1;
+
+//       update(v<<1, tl, tm, l, min(r, tm), value);
+//       update((v<<1)|1, tm+1, tr, max(l, tm+1), r, value);
+
+//       t[v] = op(t[v<<1], t[(v<<1)|1]);
+//     }
+//   }
+
+//   int query(int v, int tl, int tr, int l, int r) {
+//     if (l > r) return 0; // Null value
+//     if (l == tl && tr == r) return t[v];
+
+//     push(v);
+//     int tm = (tl + tr)>>1;
+
+//     return op(
+//       query(v<<1, tl, tm, l, min(r, tm)), 
+//       query((v<<1)|1, tm+1, tr, max(l, tm+1), r)
+//     );
+//   }
+// };
